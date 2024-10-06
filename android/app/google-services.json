@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1019761378120",
+    "project_id": "agrileafy",
+    "storage_bucket": "agrileafy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019761378120:android:1fd587184391ff524ce97d",
+        "android_client_info": {
+          "package_name": "com.example.smartappli"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBFCQjLS4WlOU8P_WsKXFEflznm_el3l0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
