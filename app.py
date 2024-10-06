@@ -3,12 +3,13 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
+from keras.layers import TFSMLayer
 
 app = Flask(__name__)
 
-# Load the TensorFlow model
+# Load the TensorFlow model using TFSMLayer
 model_path = r'C:\Users\Noraisa\Downloads\model\model.savedmodel'
-model = tf.keras.models.load_model(model_path)
+model = TFSMLayer(model_path, call_endpoint='serving_default')
 
 # Define the class names for the model's output
 class_names = [
@@ -32,7 +33,8 @@ def predict():
         image_array = np.expand_dims(image_array, axis=0)  # Add batch dimension
 
         # Make prediction
-        predictions = model.predict(image_array)
+        predictions = model(image_array)
+        predictions = predictions.numpy()  # Convert TensorFlow result to numpy array
         predicted_index = np.argmax(predictions)
         predicted_class = class_names[predicted_index]
         confidence = predictions[0][predicted_index] * 100
